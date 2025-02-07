@@ -26,7 +26,7 @@ INSTALL_REQUIRES = [
     "datasets",
     "tiktoken",
     "nltk",
-    "openai",
+    "openai>=1.3.0",
     "azure-identity",
     "azure-search-documents",
     "pyyaml~=6.0.1",

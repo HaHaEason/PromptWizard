@@ -24,7 +24,7 @@ class DatasetSpecificProcessing(ABC):
     """
     QUESTION_LITERAL = "question"
     ANSWER_WITH_REASON_LITERAL = "answer"
-    FINAL_ANSWER_LITERAL = "final_answer"
+    FINAL_ANSWER_LITERAL = "answer"
     QUESTION_KEY_IN_PROMPT = "[Question]"
     ANSWER_KEY_IN_PROMPT = "[Answer]"
     # Regular expression pattern to match text between <START> and <END> tags

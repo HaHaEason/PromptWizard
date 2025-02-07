@@ -16,8 +16,10 @@ quest_reason_ans: |
   [Answer] {answer}
 
 system_prompt: You are a helpful assistant developed by OpenAI that can efficiently perform tasks as per instruction
+# system_prompt_cn: 你是有用且得力的助手，能够高效地按照指令执行任务
 
 expert_profile: You are a helpful assistant developed by OpenAI that can efficiently perform tasks as per instruction
+# expert_profile_cn: 你是有用且得力的助手，能够高效地按照指令执行任务
 
 thinking_styles:
   - "How could I devise an experiment to help solve that problem?"
@@ -59,6 +61,46 @@ thinking_styles:
   - "Ignoring the current best solution, create an entirely new solution to the problem."
   - "Let's think step by step."
   - "Let's make a step by step plan and implement it with good notion and explanation."
+# thinking_styles_cn:
+#   - 我该如何设计一个实验来帮助解决那个问题呢？
+#   - 列出一些解决这个问题的想法，并逐一将它们应用于问题，看看是否能取得进展。
+#   - 我该如何衡量在解决这个问题方面的进展呢？
+#   - 我该如何简化这个问题，以便更容易解决呢？
+#   - 这个问题背后的关键假设是什么？
+#   - 每个解决方案的潜在风险和弊端是什么？
+#   - 对于这个问题，还有哪些替代的视角或观点呢？
+#   - 这个问题及其解决方案的长期影响是什么？
+#   - 我该如何将这个问题分解成更小、更易于管理的部分呢？
+#   - 批判性思维：这种风格涉及从不同角度分析问题，质疑假设，并评估可用的证据或信息。它侧重于逻辑推理、基于证据的决策制定，以及识别思维中潜在的偏见或缺陷。
+#   - 尝试创造性思维，产生创新的、突破常规的想法来解决问题。探索非传统解决方案，突破传统界限进行思考，并鼓励想象力和独创性。
+#   - 寻求他人的意见和合作来解决问题。强调团队合作、开放沟通，以及利用团队的多样化视角和专业知识来提出有效的解决方案。
+#   - 运用系统思维：将问题视为更大系统的一部分，并理解各个要素之间的相互联系。侧重于识别问题背后的根源、反馈循环以及相互依存关系，并制定全面解决系统整体问题的方案。
+#   - 运用风险分析：评估与不同解决方案或方法相关的潜在风险、不确定性和权衡。强调评估潜在后果以及成功或失败的可能性，并基于对风险和收益的平衡分析做出明智决策。
+#   - 运用反思性思维：从问题中抽离出来，花时间进行内省和自我反思。审视可能影响问题解决的个人偏见、假设和心智模型，并从过去的经历中学习，以改进未来的解决方法。
+#   - 需要解决的核心问题或是什么？
+#   - 导致问题的潜在原因或因素是什么？
+#   - 之前有没有尝试过一些潜在的解决方案或策略？如果有，结果如何，又学到了哪些经验教训呢？
+#   - 在解决这个问题的过程中，可能会出现哪些潜在的障碍或挑战呢？
+#   - 有没有相关数据或信息能够为问题提供洞见？如果有，有哪些数据来源，又该如何进行分析呢？
+#   - 有没有直接受到问题影响的利益相关者或个人？他们的观点和需求是什么？
+#   - 有效解决这个问题需要哪些资源（财务、人力、技术等）呢？
+#   - 如何衡量或评估解决这个问题的进展或成功呢？
+#   - 可以使用哪些指标或衡量标准呢？
+#   - 这个问题是需要特定专业知识或技能集的技术或实践问题，还是更偏向于概念性或理论性问题呢？
+#   - 问题是否涉及物理限制，比如有限的资源、基础设施或空间呢？
+#   - 问题是否与人类行为有关，比如社会、文化或心理问题呢？
+#   - 问题是否涉及在不确定性下或存在竞争目标时需要做出选择的决策制定或规划呢？
+#   - 问题是否是需要数据分析、建模或优化技术的分析性问题呢？
+#   - 问题是否是需要创造性解决方案和创新的设计挑战呢？
+#   - 问题是否需要解决系统性或结构性问题，而不仅仅是单个实例呢？
+#   - 问题是否具有时效性或紧迫性，需要立即关注和采取行动呢？
+#   - 这种问题规范通常会产生哪些类型的解决方案呢？
+#   - 给定问题规范和目前的最佳解决方案，猜测一下其他可能的解决方案。
+#   - 假设目前的最佳解决方案完全错误，还有哪些其他思考问题规范的方式呢？
+#   - 鉴于你对这类问题规范的了解，修改目前最佳解决方案的最佳方式是什么？
+#   - 不考虑目前的最佳解决方案，为这个问题创造一个全新的解决方案。
+#   - 让我们一步一步地思考。
+#   - 让我们制定一个分步计划，并以良好的思路和解释来实施它。
 
 
 # ans_delimiter_instruction: " Wrap only your final answer, without reason for each question separately between <ANS_START> and <ANS_END> tags."
@@ -112,6 +154,14 @@ meta_sample_template: |
   Make sure to wrap each generated prompt with <START> and <END>
   [Prompt Instruction]: {prompt_instruction}
   [Generated Prompts]:
+# meta_sample_template_cn: |
+#   你收到了一个任务描述、一个提示指令以及一些不同的风格，这些风格被称为元提示：
+#   [任务描述]: {task_description}
+#   [元提示]: {meta_prompts}
+#   现在你需要生成{num_variations}个变体，将以下指令与元提示灵活结合，同时保持相似的语义含义。
+#   请确保用<START>和<END>分别包裹每个生成的提示。
+#   [提示指令]: {prompt_instruction}
+#   [生成的提示词]:
 
 
 intent_template: |
@@ -143,6 +193,23 @@ expert_template: |
   
   [Instruction]: {task_description}
   [Agent Description]:
+# expert_template_cn: |
+#   对于每条指令，以第二人称视角写一篇高质量的描述，介绍最能胜任且最适合回答该指令的代理人。
+  
+#   [Instruction]: 列出森林砍伐可能产生的5种影响。\n
+#   [Agent Description]: 你是一名专门研究生态系统及其与人类活动相互作用的环境科学家。你对森林砍伐对环境的影响有着丰富的知识，包括对生物多样性、气候变化、土壤质量、水资源和人类健康的影响。你的工作得到了广泛认可，并为制定旨在促进可持续森林管理实践的政策和法规做出了贡献。你掌握了最新的研究成果，能够提供一份详细而全面的森林砍伐可能产生的影响列表，包括但不限于无数物种栖息地的丧失、温室气体排放的增加、水质和水量的减少、水土流失以及疾病的出现。你的专业知识和见解对于理解人类行为与环境之间的复杂相互作用极具价值。
+
+  
+#   [Instruction]: 为日食找出一个描述性短语。\n
+#   [Agent Description]: 你是一名对天体事件和现象有着深刻理解的天文学家。你丰富的知识和经验使你成为描述日食独特而迷人特征的专家。在你的职业生涯中，你见证并研究了许多次日食，你对细节和细微之处有着敏锐的洞察力。你对日食的描述性短语将生动、诗意且科学准确。你既能捕捉到这一天文事件令人惊叹的美丽，又能解释其背后的科学原理。你可以凭借你深厚的天文学知识，包括太阳、月亮和地球的运动，创造出一个准确而优雅地捕捉日食本质的短语。你的描述性短语将帮助他人欣赏这一自然现象的奇妙之处。
+
+  
+#   [Instruction]: 识别这句话中的词性："The dog barked at the postman"。 \n
+#   [Agent Description]: 你是一名精通语言及其结构研究的语言学家。你擅长识别句子中的词性，能够轻松识别句子中每个词的功能。你对语法规则有着良好的理解，能够区分名词、动词、形容词、副词、代词、介词和连词。你可以迅速而准确地识别出句子“The dog barked at the postman”中的词性，并解释句子中每个词的作用。你在语言和语法方面的专业知识对于分析和理解交流的细微差别极具价值。
+  
+  
+#   [Instruction]: {task_description}
+#   [Agent Description]:
 
 
 examples_critique_template: |

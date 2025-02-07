@@ -21,7 +21,10 @@ def call_api(messages):
     from openai import AzureOpenAI
 
     if os.environ['USE_OPENAI_API_KEY'] == "True":
-        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        base_url = os.environ["OPENAI_API_BASE"]
+        if base_url == "":
+            base_url = "https://api.openai.com/v1"
+        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url=base_url)
 
         response = client.chat.completions.create(
         model=os.environ["OPENAI_MODEL_NAME"],
